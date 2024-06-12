@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTur - Giriş Yap</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ek CSS Stilleri */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        .login {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .inputBox {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .inputBox h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .inputBox input[type="email"],
+        .inputBox input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- login section starts -->
+
+    <section class="login" id="login">
+
+        <h1 class="heading">Giriş Yap</h1>
+
+        <div class="container">
+
+            <form id="loginForm">
+                <div class="inputBox">
+                    <h3>E-posta</h3>
+                    <input type="email" id="email" placeholder="E-posta adresinizi girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Şifre</h3>
+                    <input type="password" id="password" placeholder="Şifrenizi girin" required>
+                </div>
+                <input type="submit" value="Giriş Yap" class="btn">
+                <p>Bir hesabın yok mu şimdi kayıt ol? <a href="/signup.html">Kayıt ol</a></p>
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- login section ends -->
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            fetch('http://localhost:3000/signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json()) // Yanıtı JSON olarak işle
+            .then(data => {
+                if (data.message === 'Giriş başarılı!') {
+                    // Başarılı giriş durumunda index.html sayfasına yönlendir
+                    window.location.href = '/index.html';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Giriş sırasında bir hata oluştu.');
+            });
+        });
+    </script>
+</body>
+</html>

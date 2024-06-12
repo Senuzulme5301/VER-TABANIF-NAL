@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTur</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">BiTur</a>
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#review">Reviews</a>
+            
+        </nav>
+        <a href="#book" class="btn">Book Now</a>
+        <a href="signin.html" class="btn">Signin</a>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>DISCOVER EXCITING ADVENTURES</h3>
+            <p>Embark on thrilling journeys with us</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+        <div class="video-container">
+            <video src="images/home.mp4" id="video" loop autoplay muted></video>
+        </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts -->
+
+    <section class="about" id="about">
+        <h1 class="heading">About Us</h1>
+        <div class="container">
+            <div class="image-container">
+                <img src="images/about-1.jpg" alt="" class="image">
+                <div class="controls">
+                    <span class="control-btn" data-src="images/about-1.jpg"></span>
+                    <span class="control-btn" data-src="images/about-2.jpg"></span>
+                    <span class="control-btn" data-src="images/about-3.jpg"></span>
+                </div>
+            </div>
+            <div class="content">
+                <span>Welcome to Our Journey</span>
+                <h3>Embark on Unforgettable Journeys</h3>
+                <p>Allow yourself to be lost in the art of discovery with us. Our mission is to create unique and enriching travel experiences for every adventurer. Guided by the passion for exploration, we invite you to join us on a journey where each destination is a chapter in your own travel story.</p>
+                <a href="#" class="btn">Book Now</a>    
+            </div>
+        </div>
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- services section starts -->
+
+    <section class="services" id="services">
+        <h1 class="heading">Our Services</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/services-1.png" alt="">
+                <h3>Affordable Accommodation</h3>
+                <p>We care about your wallet.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="box">
+                <img src="images/services-2.png" alt="">
+                <h3>Adventure</h3>
+                <p>Experience unforgettable adventures.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="box">
+                <img src="images/services-3.png" alt="">
+                <h3>Food & Beverages</h3>
+                <p>All our food and drinks are checked by food detectors.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section ends -->
+
+    <!-- packages section starts -->
+
+    <section class="packages" id="packages">
+        <h1 class="heading">Our Packages</h1>
+        <div class="box-container">
+            <!-- Here will be dynamically added package options -->
+        </div>
+    </section>
+
+    <!-- packages section ends -->
+
+    <!-- gallery section starts -->
+
+    <section class="gallery" id="gallery">
+        <h1 class="heading">Gallery</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/gallery-1.jpg" alt="">
+                <span>Travel Spot</span>
+            </div>
+            <div class="box">
+                <img src="images/gallery-2.jpg" alt="">
+                <span>Travel Spot</span>
+            </div>
+            <div class="box">
+                <img src="images/gallery-3.jpg" alt="">
+                <span>Travel Spot</span>
+            </div>
+            <div class="box">
+                <img src="images/gallery-4.jpg" alt="">
+                <span>Travel Spot</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallery section ends -->
+
+    <!-- review section starts -->
+
+    <section class="review" id="review">
+        <h1 class="heading">Reviews</h1>
+        <div class="swiper-container review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic-1.png" alt="">
+                        <h3>John Doe</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet eros non nunc tristique volutpat.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic-2.png" alt="">
+                        <h3>Jane Doe</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet eros non nunc tristique volutpat.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic-3.png" alt="">
+                        <h3>Mike Doe</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet eros non nunc tristique volutpat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- booking section starts -->
+
+    <section class="book" id="book">
+        <h1 class="heading">Book Now</h1>
+        <form id="reservation-form">
+            <div class="inputBox">
+                <h3>Select Package</h3>
+                <select id="package" required>
+                    <!-- Here will be dynamically added package options -->
+                    <option value="" selected disabled>Select a Package</option>
+                    
+                </select>
+            </div>
+            <div class="inputBox">
+                <h3>Start Date</h3>
+                <input type="date" id="start-date" required>
+            </div>
+            <div class="inputBox">
+                <h3>End Date</h3>
+                <input type="date" id="end-date" required>
+            </div>
+            <input type="submit" class="btn" value="Submit">
+        </form>
+    </section>
+
+    <!-- booking section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet eros non nunc tristique volutpat.</p>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#review">Reviews</a>
+                <a href="#book">Book Now</a>
+            </div>
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="credit">Created by <span>Group 9</span> | All rights reserved</div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom js file link -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTur - Kayıt Ol</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ek CSS Stilleri */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        .register {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .inputBox {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .inputBox h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .inputBox input[type="text"],
+        .inputBox input[type="email"],
+        .inputBox input[type="password"],
+        .inputBox input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="/index.html" class="logo">BiTur</a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/index.html#home">ev</a>
+            <a href="/index.html#about">hakkında</a>
+            <a href="/index.html#services">servis</a>
+            <a href="/index.html#packages">paketler</a>
+            <a href="/index.html#gallery">galeri</a>
+            <a href="/index.html#review">inceleme</a>
+        </nav>
+
+        <a href="/index.html#book" class="btn"> rezervasyon yap</a>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- registration section starts -->
+
+    <section class="register" id="register">
+
+        <h1 class="heading">Kayıt Ol</h1>
+
+        <div class="container">
+
+            <form id="signupForm">
+                <div class="inputBox">
+                    <h3>Ad</h3>
+                    <input type="text" id="first_name" placeholder="Adınızı girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Soyad</h3>
+                    <input type="text" id="last_name" placeholder="Soyadınızı girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Telefon Numarası</h3>
+                    <input type="tel" id="phone" placeholder="Telefon numaranızı girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>E-posta</h3>
+                    <input type="email" id="email" placeholder="E-posta adresinizi girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Şifre</h3>
+                    <input type="password" id="password" placeholder="Şifrenizi girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Şifre Tekrar</h3>
+                    <input type="password" id="password2" placeholder="Şifrenizi tekrar girin" required>
+                </div>
+                <input type="submit" value="Kayıt Ol" class="btn">
+                <p>Zaten bir hesabınız var mı? <a href="/signin.html">Giriş yap</a></p>
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- registration section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>İletişim Bilgileri</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +5550048353</a>
+                <a href="#"><i class="fas fa-envelope"></i> furkanuzumcu053@gmail.com</a>
+                <a href="#"><i class="fas fa-map"></i> istanbul,sülüntepe</a>
+            </div>
+
+            <div class="box">
+                <h3>Seyahat Kaynakları</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> Araba</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> Otel</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> Lokanta</a>
+            </div>
+
+            <div class="box">
+                <h3>Yasal Bilgiler</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> BiTur haklarını gizli tutmaktadır</a>
+            </div>
+
+        </div>
+
+        <div class="credit">Üreten kişi <span>Hz.Furkan Üzümcü</span> | Tüm Hakları Saklıdır!</div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('first_name').value,
+                lastName: document.getElementById('last_name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                password2: document.getElementById('password2').value
+            };
+
+            fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                if (data.includes("başarılı")) {
+                    window.location.href = '/signin.html';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Kayıt sırasında bir hata oluştu.');
+            });
+        });
+    </script>
+</body>
+</html>

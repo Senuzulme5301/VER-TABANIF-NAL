@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTur - Ödeme Yap</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ek CSS Stilleri */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        .payment {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .inputBox {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .inputBox h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .inputBox input[type="text"],
+        .inputBox input[type="number"],
+        .inputBox select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="/index.html" class="logo">BiTur</a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/index.html#home">Home</a>
+            <a href="/index.html#about">About</a>
+            <a href="/index.html#services">Services</a>
+            <a href="/index.html#packages">Packages</a>
+            <a href="/index.html#gallery">Gallery</a>
+            <a href="/index.html#review">Reviews</a>
+        </nav>
+
+        <a href="/index.html#book" class="btn">Book Now</a>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- payment section starts -->
+
+    <section class="payment" id="payment">
+
+        <h1 class="heading">Ödeme Yap</h1>
+
+        <div class="container">
+
+            <form id="payment-form" class="payment-form">
+                <div class="inputBox">
+                    <h3>Kart Numarası</h3>
+                    <input type="text" name="card_number" placeholder="Kart numaranızı girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Ay/Yıl</h3>
+                    <select name="expiry_month" required>
+                        <option value="">Ay</option>
+                        <!-- Ay Seçenekleri Burada -->
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="expiry_year" required>
+                        <option value="">Yıl</option>
+                        <!-- Yıl Seçenekleri Burada -->
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <h3>CVV</h3>
+                    <input type="number" name="cvv" placeholder="CVV numaranızı girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Kart Sahibinin Adı</h3>
+                    <input type="text" name="card_holder_name" placeholder="Kart sahibinin adını girin" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Paket Adı</h3>
+                    <select name="package_name" required>
+                        <option value="">Paket Seçin</option>
+                        <!-- Paket Seçenekleri Burada -->
+                        <option value="karadeniz">Karadeniz Turu</option>
+                        <option value="kamp">Kamp</option>
+                        <option value="maldivler">Maldivler</option>
+                        <option value="konya">Konya</option>
+                        <option value="dogal-mucizeler">Doğal Mucizeler</option>
+                        <option value="doga-turlari">Doğa Turları</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <h3>Paket Başlangıç Tarihi</h3>
+                    <input type="date" name="start_date" required>
+                </div>
+                <div class="inputBox">
+                    <h3>Paket Bitiş Tarihi</h3>
+                    <input type="date" name="end_date" required>
+                </div>
+                <input type="submit" value="Ödeme Yap" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- payment section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>İletişim Bilgileri</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +5550048353</a>
+                <a href="#"><i class="fas fa-envelope"></i> furkanuzumcu053@gmail.com</a>
+                <a href="#"><i class="fas fa-map"></i> İstanbul, Sülüntepe</a>
+            </div>
+
+            <div class="box">
+                <h3>Seyahat Kaynakları</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> Araba</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> Otel</a>
+                <a href="#"><i class="fas fa-arrow-right"></i> Lokanta</a>
+            </div>
+
+            <div class="box">
+                <h3>Yasal Bilgiler</h3>
+                <a href="#"><i class="fas fa-arrow-right"></i> BiTur hakları gizlidir</a>
+            </div>
+
+        </div>
+
+        <div class="credit">Üreten kişi <span>Furkan Üzümcü</span> | Tüm Hakları Saklıdır!</div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Formun gönderilmesini ele alın
+            const paymentForm = document.querySelector('#payment-form');
+
+            paymentForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Formun varsayılan gönderimini engelle
+
+                // Kullanıcıya uyarı mesajı göster
+                alert("Ödemeniz başarılı bir şekilde gerçekleşmiştir. Tatilin tadını çıkarın!");
+
+                // Ana sayfaya yönlendir
+                window.location.href = '/index.html';
+            });
+        });
+    </script>
+</body>
+</html>
